@@ -1,13 +1,48 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Light theme (default) */
 :root {
+  --bg: #f5f0e8;
+  --surface: #fffdf7;
+  --border: #ddd8cc;
+  --text: #2a2218;
+  --muted: #7a6e5f;
+  --accent: #8b6914;
+  font-family: 'Georgia', serif;
+  color-scheme: light;
+}
+
+/* Dark theme via system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --border: #2e2e2e;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #c8a96e;
+    color-scheme: dark;
+  }
+}
+
+/* Explicit overrides via data-theme attribute */
+[data-theme="light"] {
+  --bg: #f5f0e8;
+  --surface: #fffdf7;
+  --border: #ddd8cc;
+  --text: #2a2218;
+  --muted: #7a6e5f;
+  --accent: #8b6914;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
   --bg: #0f0f0f;
   --surface: #1a1a1a;
   --border: #2e2e2e;
   --text: #e8e8e8;
   --muted: #888;
   --accent: #c8a96e;
-  font-family: 'Georgia', serif;
   color-scheme: dark;
 }
 

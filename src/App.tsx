@@ -5,11 +5,14 @@ import { AddBookForm } from './components/AddBookForm'
 import { AddFilmForm } from './components/AddFilmForm'
 import { BookList } from './components/BookList'
 import { FilmList } from './components/FilmList'
+import { ThemeToggle } from './components/ThemeToggle'
+import { useTheme } from './hooks/useTheme'
 import styles from './App.module.css'
 
 type Tab = 'books' | 'films'
 
 export default function App() {
+  const { theme, setTheme } = useTheme()
   const [tab, setTab] = useState<Tab>('books')
   const [books, setBooks] = useState<Book[]>([])
   const [films, setFilms] = useState<Film[]>([])
@@ -40,6 +43,7 @@ export default function App() {
         <button className={styles.addBtn} onClick={() => setShowForm(v => !v)}>
           {showForm ? 'Cancel' : `+ Add ${tab === 'books' ? 'Book' : 'Film'}`}
         </button>
+        <ThemeToggle theme={theme} setTheme={setTheme} />
       </header>
 
       <main>

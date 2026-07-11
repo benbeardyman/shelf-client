@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { api } from '../api'
 import type { BookCreate } from '../types'
+import styles from './form.module.css'
 
 const empty: BookCreate = {
   title: '', author: '', year: null, genre: null,
@@ -31,7 +32,7 @@ export function AddBookForm({ onAdded }: { onAdded: () => void }) {
   }
 
   return (
-    <form onSubmit={submit} className="entry-form">
+    <form onSubmit={submit} className={styles.entryForm}>
       <input required placeholder="Title" value={form.title} onChange={e => set('title', e.target.value)} />
       <input required placeholder="Author" value={form.author ?? ''} onChange={e => set('author', e.target.value)} />
       <input type="number" placeholder="Year" value={form.year ?? ''} onChange={e => set('year', e.target.value)} />

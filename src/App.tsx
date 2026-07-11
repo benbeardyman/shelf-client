@@ -5,7 +5,7 @@ import { AddBookForm } from './components/AddBookForm'
 import { AddFilmForm } from './components/AddFilmForm'
 import { BookList } from './components/BookList'
 import { FilmList } from './components/FilmList'
-import './App.css'
+import styles from './App.module.css'
 
 type Tab = 'books' | 'films'
 
@@ -26,25 +26,25 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <header>
+    <div className={styles.app}>
+      <header className={styles.header}>
         <h1>Shelf</h1>
-        <nav>
-          <button className={tab === 'books' ? 'active' : ''} onClick={() => { setTab('books'); setShowForm(false) }}>
+        <nav className={styles.nav}>
+          <button className={tab === 'books' ? styles.active : ''} onClick={() => { setTab('books'); setShowForm(false) }}>
             Books ({books.length})
           </button>
-          <button className={tab === 'films' ? 'active' : ''} onClick={() => { setTab('films'); setShowForm(false) }}>
+          <button className={tab === 'films' ? styles.active : ''} onClick={() => { setTab('films'); setShowForm(false) }}>
             Films ({films.length})
           </button>
         </nav>
-        <button className="add-btn" onClick={() => setShowForm(v => !v)}>
+        <button className={styles.addBtn} onClick={() => setShowForm(v => !v)}>
           {showForm ? 'Cancel' : `+ Add ${tab === 'books' ? 'Book' : 'Film'}`}
         </button>
       </header>
 
       <main>
         {showForm && (
-          <section className="form-section">
+          <section className={styles.formSection}>
             {tab === 'books'
               ? <AddBookForm onAdded={handleAdded} />
               : <AddFilmForm onAdded={handleAdded} />}

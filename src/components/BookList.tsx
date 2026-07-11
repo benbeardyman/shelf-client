@@ -1,30 +1,31 @@
 import type { Book } from '../types'
 import { api } from '../api'
+import styles from './item.module.css'
 
 function Stars({ n }: { n: number | null }) {
   if (!n) return null
-  return <span className="stars">{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>
+  return <span className={styles.stars}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>
 }
 
 export function BookList({ books, onChanged }: { books: Book[]; onChanged: () => void }) {
-  if (!books.length) return <p className="empty">No books yet.</p>
+  if (!books.length) return <p className={styles.empty}>No books yet.</p>
 
   return (
-    <ul className="item-list">
+    <ul className={styles.itemList}>
       {books.map(b => (
-        <li key={b.id} className="item-card">
-          <div className="item-main">
+        <li key={b.id} className={styles.itemCard}>
+          <div className={styles.itemMain}>
             <strong>{b.title}</strong>
-            <span className="item-sub">{b.author}{b.year ? ` (${b.year})` : ''}</span>
-            {b.genre && <span className="tag">{b.genre}</span>}
+            <span className={styles.itemSub}>{b.author}{b.year ? ` (${b.year})` : ''}</span>
+            {b.genre && <span className={styles.tag}>{b.genre}</span>}
           </div>
-          <div className="item-meta">
+          <div className={styles.itemMeta}>
             <Stars n={b.rating} />
-            {b.date_read && <span className="date">Read {b.date_read}</span>}
+            {b.date_read && <span className={styles.date}>Read {b.date_read}</span>}
           </div>
-          {b.notes && <p className="notes">{b.notes}</p>}
+          {b.notes && <p className={styles.notes}>{b.notes}</p>}
           <button
-            className="delete-btn"
+            className={styles.deleteBtn}
             onClick={async () => { await api.books.remove(b.id); onChanged() }}
             aria-label="Delete"
           >

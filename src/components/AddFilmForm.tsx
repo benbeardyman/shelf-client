@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { api } from '../api'
 import type { FilmCreate } from '../types'
+import styles from './form.module.css'
 
 const empty: FilmCreate = {
   title: '', director: null, year: null, genre: null,
@@ -31,7 +32,7 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
   }
 
   return (
-    <form onSubmit={submit} className="entry-form">
+    <form onSubmit={submit} className={styles.entryForm}>
       <input required placeholder="Title" value={form.title} onChange={e => set('title', e.target.value)} />
       <input placeholder="Director" value={form.director ?? ''} onChange={e => set('director', e.target.value)} />
       <input type="number" placeholder="Year" value={form.year ?? ''} onChange={e => set('year', e.target.value)} />

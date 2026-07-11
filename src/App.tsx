@@ -1,0 +1,60 @@
+import { useEffect, useState } from 'react'
+import { api } from './api'
+import type { Book, Film } from './types'
+import { AddBookForm } from './components/AddBookForm'
+import { AddFilmForm } from './components/AddFilmForm'
+import { BookList } from './components/BookList'
+import { FilmList } from './components/FilmList'
+import './App.css'
+
+type Tab = 'books' | 'films'
+
+export default function App() {
+  const [tab, setTab] = useState<Tab>('books')
+  const [books, setBooks] = useState<Book[]>([])
+  const [films, setFilms] = useState<Film[]>([])
+  const [showForm, setShowForm] = useState(false)
+
+  const loadBooks = async () => setBooks(await api.books.list())
+  const loadFilms = async () => setFilms(await api.films.list())
+
+  useEffect(() => { loadBooks(); loadFilms() }, [])
+
+  const handleAdded = () => {
+    setShowForm(false)
+    tab === 'books' ? loadBooks() : loadFilms()
+  }
+
+  return (
+    <div className="app">
+      <header>
+        <h1>Shelf</h1>
+        <nav>
+          <button className={tab === 'books' ? 'active' : ''} onClick={() => { setTab('books'); setShowForm(false) }}>
+            Books ({books.length})
+          </button>
+          <button className={tab === 'films' ? 'active' : ''} onClick={() => { setTab('films'); setShowForm(false) }}>
+            Films ({films.length})
+          </button>
+        </nav>
+        <button className="add-btn" onClick={() => setShowForm(v => !v)}>
+          {showForm ? 'Cancel' : `+ Add ${tab === 'books' ? 'Book' : 'Film'}`}
+        </button>
+      </header>
+
+      <main>
+        {showForm && (
+          <section className="form-section">
+            {tab === 'books'
+              ? <AddBookForm onAdded={handleAdded} />
+              : <AddFilmForm onAdded={handleAdded} />}
+          </section>
+        )}
+
+        {tab === 'books'
+          ? <BookList books={books} onChanged={loadBooks} />
+          : <FilmList films={films} onChanged={loadFilms} />}
+      </main>
+    </div>
+  )
+}

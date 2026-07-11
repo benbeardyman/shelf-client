@@ -1,0 +1,32 @@
+.toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.toggle button {
+  background: none;
+  border: none;
+  border-right: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.toggle button:last-child {
+  border-right: none;
+}
+
+.toggle button:hover {
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+.toggle button.active {
+  background: var(--surface);
+  color: var(--accent);
+}

@@ -44,19 +44,11 @@
   --color-danger: var(--color-danger-a0);
   --color-info: var(--color-info-a0);
 
-  /* Border & Divider */
-  --color-border: var(--color-surface-a20);
-  --color-divider: var(--color-surface-a10);
+   /* Border & Divider */
+   --color-border: var(--color-surface-a20);
+   --color-divider: var(--color-surface-a10);
 
-  /* Legacy support for backward compatibility */
-  --bg: var(--color-surface-bg);
-  --surface: var(--color-surface-elevated);
-  --border: var(--color-border);
-  --text: var(--color-text-primary);
-  --muted: var(--color-text-muted);
-  --accent: var(--color-accent);
-
-  color-scheme: light;
+   color-scheme: light;
 }
 
 /* ============================================================================
@@ -87,20 +79,12 @@
     --color-danger: var(--color-danger-a0);
     --color-info: var(--color-info-a0);
 
-    /* Border & Divider */
-    --color-border: var(--color-surface-a20);
-    --color-divider: var(--color-surface-a10);
+     /* Border & Divider */
+     --color-border: var(--color-surface-a20);
+     --color-divider: var(--color-surface-a10);
 
-    /* Legacy support */
-    --bg: var(--color-surface-bg);
-    --surface: var(--color-surface-elevated);
-    --border: var(--color-border);
-    --text: var(--color-text-primary);
-    --muted: var(--color-text-muted);
-    --accent: var(--color-accent);
-
-    color-scheme: dark;
-  }
+     color-scheme: dark;
+   }
 }
 
 /* ============================================================================
@@ -130,19 +114,11 @@
   --color-danger: var(--color-danger-a0);
   --color-info: var(--color-info-a0);
 
-  /* Border & Divider */
-  --color-border: var(--color-surface-a20);
-  --color-divider: var(--color-surface-a10);
+   /* Border & Divider */
+   --color-border: var(--color-surface-a20);
+   --color-divider: var(--color-surface-a10);
 
-  /* Legacy support */
-  --bg: var(--color-surface-bg);
-  --surface: var(--color-surface-elevated);
-  --border: var(--color-border);
-  --text: var(--color-text-primary);
-  --muted: var(--color-text-muted);
-  --accent: var(--color-accent);
-
-  color-scheme: light;
+   color-scheme: light;
 }
 
 /* ============================================================================
@@ -172,17 +148,9 @@
   --color-danger: var(--color-danger-a0);
   --color-info: var(--color-info-a0);
 
-  /* Border & Divider */
-  --color-border: var(--color-surface-a20);
-  --color-divider: var(--color-surface-a10);
+   /* Border & Divider */
+   --color-border: var(--color-surface-a20);
+   --color-divider: var(--color-surface-a10);
 
-  /* Legacy support */
-  --bg: var(--color-surface-bg);
-  --surface: var(--color-surface-elevated);
-  --border: var(--color-border);
-  --text: var(--color-text-primary);
-  --muted: var(--color-text-muted);
-  --accent: var(--color-accent);
-
-  color-scheme: dark;
+   color-scheme: dark;
 }

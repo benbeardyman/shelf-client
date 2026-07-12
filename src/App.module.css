@@ -15,14 +15,14 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 1rem;
   margin-bottom: spacing-lg;
 }
 
 .header h1 {
   font-size: 1.8rem;
-  color: var(--accent);
+  color: var(--color-accent);
   letter-spacing: 0.1em;
   flex: 1;
 }
@@ -35,8 +35,8 @@
 .nav button,
 .addBtn {
   background: none;
-  border: 1px solid var(--border);
-  color: var(--muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
   padding: 0.4rem 0.9rem;
   border-radius: 4px;
   cursor: pointer;
@@ -46,20 +46,20 @@
 
 .nav button:hover,
 .addBtn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 .nav button.active {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 .addBtn {
-  color: var(--text);
+  color: var(--color-text-primary);
 }
 
 .formSection {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 1.25rem;
   margin-bottom: spacing-lg;

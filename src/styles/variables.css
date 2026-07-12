@@ -1,11 +1,11 @@
 /* ============================================================================
    BREAKPOINTS - Mobile-first approach
    ============================================================================ */
-@value xs: 320px;
-@value sm: 400px;
-@value md: 768px;
-@value lg: 1024px;
-@value xl: 1280px;
+@value xs-screen: min-width: 320px;
+@value s-screen: min-width: 400px;
+@value m-screen: min-width: 768px;
+@value l-screen: min-width: 1024px;
+@value xl-screen: min-width: 1280px;
 
 /* ============================================================================
    SPACING - 8px base scale

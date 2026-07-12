@@ -1,3 +1,8 @@
+@value spacing-sm from '../styles/variables.css';
+@value spacing-md from '../styles/variables.css';
+@value spacing-xs from '../styles/variables.css';
+@value transition-fast from '../styles/variables.css';
+
 .itemList {
   list-style: none;
   display: flex;
@@ -16,9 +21,10 @@
 .itemMain {
   display: flex;
   align-items: baseline;
-  gap: 0.6rem;
+  gap: spacing-sm;
   flex-wrap: wrap;
-  margin-bottom: 0.3rem;
+  margin-bottom: spacing-xs;
+  flex-direction: column;
 }
 .itemMain strong {
   font-size: 1rem;
@@ -30,7 +36,7 @@
 .tag {
   font-size: 0.75rem;
   background: var(--border);
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem spacing-sm;
   border-radius: 3px;
   color: var(--muted);
 }
@@ -50,7 +56,7 @@
 }
 
 .notes {
-  margin-top: 0.5rem;
+  margin-top: spacing-sm;
   font-size: 0.85rem;
   color: var(--muted);
   font-style: italic;
@@ -65,7 +71,7 @@
   color: var(--border);
   cursor: pointer;
   font-size: 0.8rem;
-  transition: color 0.15s;
+  transition: transition-fast;
 }
 .deleteBtn:hover {
   color: #e06060;

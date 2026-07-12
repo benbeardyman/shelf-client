@@ -1,0 +1,55 @@
+/* ============================================================================
+   THEME - Color palette and theming system
+   ============================================================================
+   
+   Supports:
+   - System preference (prefers-color-scheme: dark)
+   - Explicit data-theme attribute override
+   - Light theme as default fallback
+   ============================================================================ */
+
+/* Light theme (default) */
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf7;
+  --border: #ddd8cc;
+  --text: #2a2218;
+  --muted: #7a6e5f;
+  --accent: #8b6914;
+  color-scheme: light;
+}
+
+/* Dark theme via system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --border: #2e2e2e;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #c8a96e;
+    color-scheme: dark;
+  }
+}
+
+/* Explicit light theme override */
+[data-theme='light'] {
+  --bg: #f5f0e8;
+  --surface: #fffdf7;
+  --border: #ddd8cc;
+  --text: #2a2218;
+  --muted: #7a6e5f;
+  --accent: #8b6914;
+  color-scheme: light;
+}
+
+/* Explicit dark theme override */
+[data-theme='dark'] {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2e2e2e;
+  --text: #e8e8e8;
+  --muted: #888;
+  --accent: #c8a96e;
+  color-scheme: dark;
+}

@@ -1,7 +1,13 @@
+@value spacing-lg from './styles/variables.css';
+@value spacing-md from './styles/variables.css';
+@value spacing-sm from './styles/variables.css';
+@value spacing-xs from './styles/variables.css';
+@value transition-fast from './styles/variables.css';
+
 .app {
   max-width: 720px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: spacing-lg 1rem;
 }
 
 .header {
@@ -11,7 +17,7 @@
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
   padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: spacing-lg;
 }
 
 .header h1 {
@@ -23,7 +29,7 @@
 
 .nav {
   display: flex;
-  gap: 0.5rem;
+  gap: spacing-sm;
 }
 
 .nav button,
@@ -35,7 +41,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: all 0.15s;
+  transition: transition-fast;
 }
 
 .nav button:hover,
@@ -56,5 +62,5 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: spacing-lg;
 }

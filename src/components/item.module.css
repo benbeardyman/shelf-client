@@ -2,6 +2,7 @@
 @value spacing-md from '../styles/variables.css';
 @value spacing-xs from '../styles/variables.css';
 @value transition-fast from '../styles/variables.css';
+@value m-screen from '../styles/variables.css';
 
 .itemList {
   list-style: none;
@@ -25,6 +26,12 @@
   flex-wrap: wrap;
   margin-bottom: spacing-xs;
   flex-direction: column;
+}
+
+@media (m-screen) {
+  .itemMain {
+    flex-direction: row;
+  }
 }
 .itemMain strong {
   font-size: 1rem;

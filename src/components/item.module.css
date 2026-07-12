@@ -1,26 +1,78 @@
-.itemList { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.itemList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
 .itemCard {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 6px; padding: 1rem 1.1rem; position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  position: relative;
 }
 
-.itemMain { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
-.itemMain strong { font-size: 1rem; }
-.itemSub { color: var(--muted); font-size: 0.85rem; }
-.tag { font-size: 0.75rem; background: var(--border); padding: 0.15rem 0.5rem; border-radius: 3px; color: var(--muted); }
+.itemMain {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.itemMain strong {
+  font-size: 1rem;
+}
+.itemSub {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.tag {
+  font-size: 0.75rem;
+  background: var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  color: var(--muted);
+}
 
-.itemMeta { display: flex; gap: 0.8rem; align-items: center; font-size: 0.85rem; }
-.stars { color: var(--accent); letter-spacing: 0.05em; }
-.date { color: var(--muted); }
+.itemMeta {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.stars {
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.date {
+  color: var(--muted);
+}
 
-.notes { margin-top: 0.5rem; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.notes {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
 
 .deleteBtn {
-  position: absolute; top: 0.75rem; right: 0.75rem;
-  background: none; border: none; color: var(--border); cursor: pointer; font-size: 0.8rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--border);
+  cursor: pointer;
+  font-size: 0.8rem;
   transition: color 0.15s;
 }
-.deleteBtn:hover { color: #e06060; }
+.deleteBtn:hover {
+  color: #e06060;
+}
 
-.empty { color: var(--muted); font-style: italic; padding: 1rem 0; }
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 1rem 0;
+}

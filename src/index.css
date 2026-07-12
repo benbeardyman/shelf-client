@@ -1,4 +1,10 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* Light theme (default) */
 :root {
@@ -26,7 +32,7 @@
 }
 
 /* Explicit overrides via data-theme attribute */
-[data-theme="light"] {
+[data-theme='light'] {
   --bg: #f5f0e8;
   --surface: #fffdf7;
   --border: #ddd8cc;
@@ -36,7 +42,7 @@
   color-scheme: light;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg: #0f0f0f;
   --surface: #1a1a1a;
   --border: #2e2e2e;
@@ -46,4 +52,8 @@
   color-scheme: dark;
 }
 
-body { background: var(--bg); color: var(--text); min-height: 100vh; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}

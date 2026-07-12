@@ -17,6 +17,7 @@ export interface Film {
   genre: string | null;
   date_watched: string | null;
   rating: number | null;
+  type: string;
   notes: string | null;
 }
 

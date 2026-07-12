@@ -10,6 +10,7 @@ const empty: FilmCreate = {
   genre: null,
   date_watched: null,
   rating: null,
+  type: '',
   notes: null,
 };
 
@@ -21,6 +22,7 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
     setForm((f) => ({ ...f, [k]: v === '' ? null : v }));
 
   const submit = async (e: React.FormEvent) => {
+    console.log('form', form);
     e.preventDefault();
     setSaving(true);
     try {
@@ -74,6 +76,17 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
         {[1, 2, 3, 4, 5].map((n) => (
           <option key={n} value={n}>
             {n} ★
+          </option>
+        ))}
+      </select>
+      <select
+        value={form.type ?? ''}
+        onChange={(e) => set('type', e.target.value)}
+      >
+        <option value=''>Type</option>
+        {['Film', 'TV'].map((n) => (
+          <option key={n} value={n}>
+            {n}
           </option>
         ))}
       </select>

@@ -1,6 +1,67 @@
 /* ============================================================================
-   BREAKPOINTS - Mobile-first approach
+   DESIGN SYSTEM TOKENS - Colors, spacing, typography, animations
+   ============================================================================
+   
+   This file re-exports commonly used design tokens for convenience in
+   component CSS Modules.
+   
+   Color tokens are defined in colors.css
    ============================================================================ */
+
+@import './colors.css';
+
+/* ============================================================================
+   COLORS - Re-export commonly used tokens for convenience
+   ============================================================================ */
+
+/* Text colors */
+@value text-light from './colors.css';
+@value text-dark from './colors.css';
+
+/* Primary colors */
+@value primary-a0 from './colors.css';
+@value primary-a10 from './colors.css';
+@value primary-a20 from './colors.css';
+@value primary-a30 from './colors.css';
+@value primary-a40 from './colors.css';
+@value primary-a50 from './colors.css';
+
+/* Surface colors */
+@value surface-a0 from './colors.css';
+@value surface-a10 from './colors.css';
+@value surface-a20 from './colors.css';
+@value surface-a30 from './colors.css';
+@value surface-a40 from './colors.css';
+@value surface-a50 from './colors.css';
+
+/* Surface tonal colors */
+@value surface-tonal-a0 from './colors.css';
+@value surface-tonal-a10 from './colors.css';
+@value surface-tonal-a20 from './colors.css';
+@value surface-tonal-a30 from './colors.css';
+@value surface-tonal-a40 from './colors.css';
+@value surface-tonal-a50 from './colors.css';
+
+/* Semantic colors */
+@value success-a0 from './colors.css';
+@value success-a10 from './colors.css';
+@value success-a20 from './colors.css';
+
+@value warning-a0 from './colors.css';
+@value warning-a10 from './colors.css';
+@value warning-a20 from './colors.css';
+
+@value danger-a0 from './colors.css';
+@value danger-a10 from './colors.css';
+@value danger-a20 from './colors.css';
+
+@value info-a0 from './colors.css';
+@value info-a10 from './colors.css';
+@value info-a20 from './colors.css';
+
+/* ============================================================================
+    BREAKPOINTS - Mobile-first approach
+    ============================================================================ */
 @value xs-screen: min-width: 320px;
 @value s-screen: min-width: 400px;
 @value m-screen: min-width: 768px;

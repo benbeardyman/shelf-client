@@ -75,11 +75,11 @@ No environment variables or `.env` files are needed for local development.
 
 ## Tech stack
 
-| Package | Purpose |
-|---------|---------|
-| react | UI framework |
-| typescript | Type safety |
-| vite | Dev server and build tool |
+| Package    | Purpose                   |
+| ---------- | ------------------------- |
+| react      | UI framework              |
+| typescript | Type safety               |
+| vite       | Dev server and build tool |
 
 No UI component library or state management library is used at this stage — the app is intentionally minimal.
 

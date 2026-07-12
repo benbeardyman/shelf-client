@@ -89,11 +89,11 @@
 }
 
 .text-muted {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .text-accent {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .truncate {

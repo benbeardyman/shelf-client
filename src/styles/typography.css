@@ -5,8 +5,8 @@
 /* Set base font family for body */
 body {
   font-family: 'Momo Trust Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-surface-bg);
+  color: var(--color-text-primary);
   min-height: 100vh;
 }
 

@@ -79,17 +79,21 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
           </option>
         ))}
       </select>
-      <select
-        value={form.type ?? ''}
-        onChange={(e) => set('type', e.target.value)}
-      >
-        <option value=''>Type</option>
-        {['Film', 'TV'].map((n) => (
-          <option key={n} value={n}>
-            {n}
-          </option>
+      <div className={styles.radioGroup}>
+        {['Film', 'TV'].map((option) => (
+          <div key={option} className={styles.radioOption}>
+            <input
+              type='radio'
+              id={`type-${option}`}
+              name='type'
+              value={option}
+              checked={form.type === option}
+              onChange={(e) => set('type', e.target.value)}
+            />
+            <label htmlFor={`type-${option}`}>{option}</label>
+          </div>
         ))}
-      </select>
+      </div>
       <textarea
         placeholder='Notes'
         value={form.notes ?? ''}

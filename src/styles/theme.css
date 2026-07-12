@@ -1,55 +1,188 @@
 /* ============================================================================
-   THEME - Color palette and theming system
+   THEME - Semantic color mappings and theme switching logic
    ============================================================================
    
-   Supports:
-   - System preference (prefers-color-scheme: dark)
-   - Explicit data-theme attribute override
-   - Light theme as default fallback
+   This file creates semantic color aliases from the color tokens:
+   - --color-text-primary: Main text color (auto-switches based on theme)
+   - --color-surface-bg: Page background
+   - --color-surface-elevated: Elevated surfaces (cards, panels)
+   - --color-accent: Primary accent/action color
+   - etc.
+   
+   All base color values are defined in colors.css
+   Theme switching works via:
+   1. System preference: prefers-color-scheme: dark
+   2. Manual override: data-theme="light"|"dark"
    ============================================================================ */
 
-/* Light theme (default) */
+@import './colors.css';
+
+/* ============================================================================
+   LIGHT THEME (default) - Semantic color mappings
+   ============================================================================ */
+
 :root {
-  --bg: #f5f0e8;
-  --surface: #fffdf7;
-  --border: #ddd8cc;
-  --text: #2a2218;
-  --muted: #7a6e5f;
-  --accent: #8b6914;
+  /* Text - use dark text for light backgrounds */
+  --color-text-primary: var(--color-text-dark);
+  --color-text-secondary: var(--color-primary-a30);
+  --color-text-muted: var(--color-primary-a40);
+
+  /* Background & Surface */
+  --color-surface-bg: var(--color-surface-a0);
+  --color-surface-elevated: var(--color-surface-a10);
+  --color-surface-card: var(--color-surface-a10);
+  --color-surface-tinted: var(--color-surface-tonal-a0);
+
+  /* Interactive */
+  --color-accent: var(--color-primary-a0);
+  --color-accent-hover: var(--color-primary-a10);
+  --color-accent-active: var(--color-primary-a20);
+
+  /* Semantic - Status & Feedback */
+  --color-success: var(--color-success-a0);
+  --color-warning: var(--color-warning-a0);
+  --color-danger: var(--color-danger-a0);
+  --color-info: var(--color-info-a0);
+
+  /* Border & Divider */
+  --color-border: var(--color-surface-a20);
+  --color-divider: var(--color-surface-a10);
+
+  /* Legacy support for backward compatibility */
+  --bg: var(--color-surface-bg);
+  --surface: var(--color-surface-elevated);
+  --border: var(--color-border);
+  --text: var(--color-text-primary);
+  --muted: var(--color-text-muted);
+  --accent: var(--color-accent);
+
   color-scheme: light;
 }
 
-/* Dark theme via system preference */
+/* ============================================================================
+   DARK THEME - Override with dark-mode-optimized colors
+   ============================================================================ */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f0f0f;
-    --surface: #1a1a1a;
-    --border: #2e2e2e;
-    --text: #e8e8e8;
-    --muted: #888;
-    --accent: #c8a96e;
+    /* Text - use light text for dark backgrounds */
+    --color-text-primary: var(--color-text-dark);
+    --color-text-secondary: var(--color-primary-a30);
+    --color-text-muted: var(--color-primary-a40);
+
+    /* Background & Surface */
+    --color-surface-bg: var(--color-surface-a0);
+    --color-surface-elevated: var(--color-surface-a10);
+    --color-surface-card: var(--color-surface-a10);
+    --color-surface-tinted: var(--color-surface-tonal-a0);
+
+    /* Interactive */
+    --color-accent: var(--color-primary-a0);
+    --color-accent-hover: var(--color-primary-a10);
+    --color-accent-active: var(--color-primary-a20);
+
+    /* Semantic - Status & Feedback */
+    --color-success: var(--color-success-a0);
+    --color-warning: var(--color-warning-a0);
+    --color-danger: var(--color-danger-a0);
+    --color-info: var(--color-info-a0);
+
+    /* Border & Divider */
+    --color-border: var(--color-surface-a20);
+    --color-divider: var(--color-surface-a10);
+
+    /* Legacy support */
+    --bg: var(--color-surface-bg);
+    --surface: var(--color-surface-elevated);
+    --border: var(--color-border);
+    --text: var(--color-text-primary);
+    --muted: var(--color-text-muted);
+    --accent: var(--color-accent);
+
     color-scheme: dark;
   }
 }
 
-/* Explicit light theme override */
+/* ============================================================================
+   EXPLICIT LIGHT THEME OVERRIDE - data-theme="light"
+   ============================================================================ */
+
 [data-theme='light'] {
-  --bg: #f5f0e8;
-  --surface: #fffdf7;
-  --border: #ddd8cc;
-  --text: #2a2218;
-  --muted: #7a6e5f;
-  --accent: #8b6914;
+  /* Text */
+  --color-text-primary: var(--color-text-dark);
+  --color-text-secondary: var(--color-primary-a30);
+  --color-text-muted: var(--color-primary-a40);
+
+  /* Background & Surface */
+  --color-surface-bg: var(--color-surface-a0);
+  --color-surface-elevated: var(--color-surface-a10);
+  --color-surface-card: var(--color-surface-a10);
+  --color-surface-tinted: var(--color-surface-tonal-a0);
+
+  /* Interactive */
+  --color-accent: var(--color-primary-a0);
+  --color-accent-hover: var(--color-primary-a10);
+  --color-accent-active: var(--color-primary-a20);
+
+  /* Semantic */
+  --color-success: var(--color-success-a0);
+  --color-warning: var(--color-warning-a0);
+  --color-danger: var(--color-danger-a0);
+  --color-info: var(--color-info-a0);
+
+  /* Border & Divider */
+  --color-border: var(--color-surface-a20);
+  --color-divider: var(--color-surface-a10);
+
+  /* Legacy support */
+  --bg: var(--color-surface-bg);
+  --surface: var(--color-surface-elevated);
+  --border: var(--color-border);
+  --text: var(--color-text-primary);
+  --muted: var(--color-text-muted);
+  --accent: var(--color-accent);
+
   color-scheme: light;
 }
 
-/* Explicit dark theme override */
+/* ============================================================================
+   EXPLICIT DARK THEME OVERRIDE - data-theme="dark"
+   ============================================================================ */
+
 [data-theme='dark'] {
-  --bg: #0f0f0f;
-  --surface: #1a1a1a;
-  --border: #2e2e2e;
-  --text: #e8e8e8;
-  --muted: #888;
-  --accent: #c8a96e;
+  /* Text */
+  --color-text-primary: var(--color-text-dark);
+  --color-text-secondary: var(--color-primary-a30);
+  --color-text-muted: var(--color-primary-a40);
+
+  /* Background & Surface */
+  --color-surface-bg: var(--color-surface-a0);
+  --color-surface-elevated: var(--color-surface-a10);
+  --color-surface-card: var(--color-surface-a10);
+  --color-surface-tinted: var(--color-surface-tonal-a0);
+
+  /* Interactive */
+  --color-accent: var(--color-primary-a0);
+  --color-accent-hover: var(--color-primary-a10);
+  --color-accent-active: var(--color-primary-a20);
+
+  /* Semantic */
+  --color-success: var(--color-success-a0);
+  --color-warning: var(--color-warning-a0);
+  --color-danger: var(--color-danger-a0);
+  --color-info: var(--color-info-a0);
+
+  /* Border & Divider */
+  --color-border: var(--color-surface-a20);
+  --color-divider: var(--color-surface-a10);
+
+  /* Legacy support */
+  --bg: var(--color-surface-bg);
+  --surface: var(--color-surface-elevated);
+  --border: var(--color-border);
+  --text: var(--color-text-primary);
+  --muted: var(--color-text-muted);
+  --accent: var(--color-accent);
+
   color-scheme: dark;
 }

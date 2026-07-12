@@ -1,0 +1,332 @@
+/* ============================================================================
+   COLOR TOKENS - Complete light and dark mode color palettes
+   ============================================================================
+   
+   All colors are exported as:
+   1. @value tokens for use in CSS Modules (semantic, theme-agnostic)
+   2. CSS custom properties with light/dark variants for runtime theme switching
+   
+   Color families:
+   - Text: Light/dark variants for readability in each theme
+   - Primary: Brand color with 6 intensity levels (a0-a50)
+   - Surface: Background surfaces with 6 levels
+   - Surface Tonal: Tinted surfaces with 6 levels
+   - Semantic: Success, Warning, Danger, Info (3 levels each)
+   
+   Variant naming: a0=primary/darkest, a50=lightest
+   ============================================================================ */
+
+/* ============================================================================
+   BASE TEXT COLORS - Light/Dark variants
+   ============================================================================ */
+
+@value text-light: #ffffff;
+@value text-dark: #000000;
+
+:root {
+  /* Light mode */
+  --color-text-light: #ffffff;
+  --color-text-dark: #000000;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   PRIMARY COLORS - Brand color scale (6 levels)
+   ============================================================================ */
+
+@value primary-a0: #ff6f61;
+@value primary-a10: #de6053;
+@value primary-a20: #be5146;
+@value primary-a30: #9e4239;
+@value primary-a40: #80342d;
+@value primary-a50: #632721;
+
+:root {
+  /* Light mode - primary colors */
+  --color-primary-a0: #ff6f61;
+  --color-primary-a10: #de6053;
+  --color-primary-a20: #be5146;
+  --color-primary-a30: #9e4239;
+  --color-primary-a40: #80342d;
+  --color-primary-a50: #632721;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   SURFACE COLORS - Background surfaces (6 levels)
+   ============================================================================ */
+
+@value surface-a0: #f5e8d8;
+@value surface-a10: #e9ddcf;
+@value surface-a20: #ddd2c6;
+@value surface-a30: #d1c8bd;
+@value surface-a40: #c5bdb4;
+@value surface-a50: #b9b3ab;
+
+:root {
+  /* Light mode - surface colors */
+  --color-surface-a0: #f5e8d8;
+  --color-surface-a10: #e9ddcf;
+  --color-surface-a20: #ddd2c6;
+  --color-surface-a30: #d1c8bd;
+  --color-surface-a40: #c5bdb4;
+  --color-surface-a50: #b9b3ab;
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   SURFACE TONAL COLORS - Tinted surfaces (6 levels)
+   ============================================================================ */
+
+@value surface-tonal-a0: #f8ddcc;
+@value surface-tonal-a10: #ebd3c4;
+@value surface-tonal-a20: #dfcabc;
+@value surface-tonal-a30: #d3c0b5;
+@value surface-tonal-a40: #c6b7ad;
+@value surface-tonal-a50: #baada5;
+
+:root {
+  /* Light mode - surface tonal colors */
+  --color-surface-tonal-a0: #f8ddcc;
+  --color-surface-tonal-a10: #ebd3c4;
+  --color-surface-tonal-a20: #dfcabc;
+  --color-surface-tonal-a30: #d3c0b5;
+  --color-surface-tonal-a40: #c6b7ad;
+  --color-surface-tonal-a50: #baada5;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   SUCCESS COLORS - Positive/confirmable actions (3 levels)
+   ============================================================================ */
+
+@value success-a0: #7dff95;
+@value success-a10: #95ffa6;
+@value success-a20: #abffb7;
+
+:root {
+  /* Light mode - success colors */
+  --color-success-a0: #7dff95;
+  --color-success-a10: #95ffa6;
+  --color-success-a20: #abffb7;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   WARNING COLORS - Cautionary states (3 levels)
+   ============================================================================ */
+
+@value warning-a0: #daa520;
+@value warning-a10: #e0b353;
+@value warning-a20: #e6c176;
+
+:root {
+  /* Light mode - warning colors */
+  --color-warning-a0: #daa520;
+  --color-warning-a10: #e0b353;
+  --color-warning-a20: #e6c176;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   DANGER COLORS - Destructive/error states (3 levels)
+   ============================================================================ */
+
+@value danger-a0: #ff4500;
+@value danger-a10: #ff6a43;
+@value danger-a20: #ff8868;
+
+:root {
+  /* Light mode - danger colors */
+  --color-danger-a0: #ff4500;
+  --color-danger-a10: #ff6a43;
+  --color-danger-a20: #ff8868;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   INFO COLORS - Informational states (3 levels)
+   ============================================================================ */
+
+@value info-a0: #87d1ff;
+@value info-a10: #9ad8ff;
+@value info-a20: #addfff;
+
+:root {
+  /* Light mode - info colors */
+  --color-info-a0: #87d1ff;
+  --color-info-a10: #9ad8ff;
+  --color-info-a20: #addfff;
+
+  /* Dark mode overrides below */
+}
+
+/* ============================================================================
+   DARK MODE VARIANTS - Override light mode defaults
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Text colors - swap for dark mode */
+    --color-text-light: #000000;
+    --color-text-dark: #ffffff;
+
+    /* Primary colors - brighten for dark mode */
+    --color-primary-a0: #ff6f61;
+    --color-primary-a10: #ff7f71;
+    --color-primary-a20: #ff8f81;
+    --color-primary-a30: #ff9e91;
+    --color-primary-a40: #ffaca0;
+    --color-primary-a50: #ffbab0;
+
+    /* Surface colors - darken for dark mode */
+    --color-surface-a0: #121212;
+    --color-surface-a10: #252525;
+    --color-surface-a20: #393939;
+    --color-surface-a30: #4f4f4f;
+    --color-surface-a40: #666;
+    --color-surface-a50: #7d7d7d;
+
+    /* Surface tonal colors - darken for dark mode */
+    --color-surface-tonal-a0: #3b2421;
+    --color-surface-tonal-a10: #4d3734;
+    --color-surface-tonal-a20: #5f4a47;
+    --color-surface-tonal-a30: #725f5c;
+    --color-surface-tonal-a40: #857471;
+    --color-surface-tonal-a50: #988a87;
+
+    /* Success colors - unchanged (high contrast in both modes) */
+    --color-success-a0: #7dff95;
+    --color-success-a10: #9dffac;
+    --color-success-a20: #b8ffc1;
+
+    /* Warning colors - darkened for dark mode */
+    --color-warning-a0: #daa520;
+    --color-warning-a10: #e2b85f;
+    --color-warning-a20: #e9ca8b;
+
+    /* Danger colors - darkened for dark mode */
+    --color-danger-a0: #ff4500;
+    --color-danger-a10: #ff7450;
+    --color-danger-a20: #ff9a7e;
+
+    /* Info colors - unchanged (high contrast in both modes) */
+    --color-info-a0: #87d1ff;
+    --color-info-a10: #a1dbff;
+    --color-info-a20: #b9e4ff;
+  }
+}
+
+/* ============================================================================
+   EXPLICIT LIGHT THEME OVERRIDE - data-theme="light"
+   ============================================================================ */
+
+[data-theme='light'] {
+  /* Text colors */
+  --color-text-light: #ffffff;
+  --color-text-dark: #000000;
+
+  /* Primary colors */
+  --color-primary-a0: #ff6f61;
+  --color-primary-a10: #de6053;
+  --color-primary-a20: #be5146;
+  --color-primary-a30: #9e4239;
+  --color-primary-a40: #80342d;
+  --color-primary-a50: #632721;
+
+  /* Surface colors */
+  --color-surface-a0: #f5e8d8;
+  --color-surface-a10: #e9ddcf;
+  --color-surface-a20: #ddd2c6;
+  --color-surface-a30: #d1c8bd;
+  --color-surface-a40: #c5bdb4;
+  --color-surface-a50: #b9b3ab;
+
+  /* Surface tonal colors */
+  --color-surface-tonal-a0: #f8ddcc;
+  --color-surface-tonal-a10: #ebd3c4;
+  --color-surface-tonal-a20: #dfcabc;
+  --color-surface-tonal-a30: #d3c0b5;
+  --color-surface-tonal-a40: #c6b7ad;
+  --color-surface-tonal-a50: #baada5;
+
+  /* Success colors */
+  --color-success-a0: #7dff95;
+  --color-success-a10: #95ffa6;
+  --color-success-a20: #abffb7;
+
+  /* Warning colors */
+  --color-warning-a0: #daa520;
+  --color-warning-a10: #e0b353;
+  --color-warning-a20: #e6c176;
+
+  /* Danger colors */
+  --color-danger-a0: #ff4500;
+  --color-danger-a10: #ff6a43;
+  --color-danger-a20: #ff8868;
+
+  /* Info colors */
+  --color-info-a0: #87d1ff;
+  --color-info-a10: #9ad8ff;
+  --color-info-a20: #addfff;
+}
+
+/* ============================================================================
+   EXPLICIT DARK THEME OVERRIDE - data-theme="dark"
+   ============================================================================ */
+
+[data-theme='dark'] {
+  /* Text colors */
+  --color-text-light: #000000;
+  --color-text-dark: #ffffff;
+
+  /* Primary colors */
+  --color-primary-a0: #ff6f61;
+  --color-primary-a10: #ff7f71;
+  --color-primary-a20: #ff8f81;
+  --color-primary-a30: #ff9e91;
+  --color-primary-a40: #ffaca0;
+  --color-primary-a50: #ffbab0;
+
+  /* Surface colors */
+  --color-surface-a0: #121212;
+  --color-surface-a10: #252525;
+  --color-surface-a20: #393939;
+  --color-surface-a30: #4f4f4f;
+  --color-surface-a40: #666;
+  --color-surface-a50: #7d7d7d;
+
+  /* Surface tonal colors */
+  --color-surface-tonal-a0: #3b2421;
+  --color-surface-tonal-a10: #4d3734;
+  --color-surface-tonal-a20: #5f4a47;
+  --color-surface-tonal-a30: #725f5c;
+  --color-surface-tonal-a40: #857471;
+  --color-surface-tonal-a50: #988a87;
+
+  /* Success colors */
+  --color-success-a0: #7dff95;
+  --color-success-a10: #9dffac;
+  --color-success-a20: #b8ffc1;
+
+  /* Warning colors */
+  --color-warning-a0: #daa520;
+  --color-warning-a10: #e2b85f;
+  --color-warning-a20: #e9ca8b;
+
+  /* Danger colors */
+  --color-danger-a0: #ff4500;
+  --color-danger-a10: #ff7450;
+  --color-danger-a20: #ff9a7e;
+
+  /* Info colors */
+  --color-info-a0: #87d1ff;
+  --color-info-a10: #a1dbff;
+  --color-info-a20: #b9e4ff;
+}

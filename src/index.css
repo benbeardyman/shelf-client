@@ -3,13 +3,13 @@
    ============================================================================
    
    This file orchestrates all global styles in the correct order:
-   1. Theme - CSS variables (light/dark mode)
+   1. Theme - CSS variables (light/dark mode) + color imports
    2. Fonts - Font imports and @font-face declarations
    3. Typography - Global text styles and heading hierarchy
    4. Global - CSS resets and utility classes
    
    Component-specific styles are in individual .module.css files
-   Design tokens are in styles/variables.css
+   Design tokens are in styles/variables.css and styles/colors.css
    ============================================================================ */
 
 @import './styles/theme.css';

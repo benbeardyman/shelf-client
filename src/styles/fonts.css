@@ -1,0 +1,39 @@
+/* ============================================================================
+   FONTS - Import and font-face declarations
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap');
+
+/* ============================================================================
+   CUSTOM FONT FAMILIES
+   ============================================================================ */
+
+/* Mono45Headline - Light weight */
+@font-face {
+  font-family: 'Mono45Headline';
+  src:
+    url('/fonts/Mono45Headline-Light.woff2') format('woff2'),
+    url('/fonts/Mono45Headline-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* Mono45Headline - Regular weight */
+@font-face {
+  font-family: 'Mono45Headline';
+  src:
+    url('/fonts/Mono45Headline-Regular.woff2') format('woff2'),
+    url('/fonts/Mono45Headline-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Mono45Headline - Bold weight */
+@font-face {
+  font-family: 'Mono45Headline';
+  src:
+    url('/fonts/Mono45Headline-Bold.woff2') format('woff2'),
+    url('/fonts/Mono45Headline-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}

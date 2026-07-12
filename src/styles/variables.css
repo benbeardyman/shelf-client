@@ -1,0 +1,57 @@
+/* ============================================================================
+   BREAKPOINTS - Mobile-first approach
+   ============================================================================ */
+@value xs: 320px;
+@value sm: 400px;
+@value md: 768px;
+@value lg: 1024px;
+@value xl: 1280px;
+
+/* ============================================================================
+   SPACING - 8px base scale
+   ============================================================================ */
+@value spacing-xs: 0.25rem; /* 4px */
+@value spacing-sm: 0.5rem; /* 8px */
+@value spacing-md: 1rem; /* 16px */
+@value spacing-lg: 1.5rem; /* 24px */
+@value spacing-xl: 2rem; /* 32px */
+@value spacing-2xl: 3rem; /* 48px */
+@value spacing-3xl: 4rem; /* 64px */
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+/* Font sizes */
+@value fs-xs: 0.75rem; /* 12px */
+@value fs-sm: 0.875rem; /* 14px */
+@value fs-base: 1rem; /* 16px */
+@value fs-lg: 1.125rem; /* 18px */
+@value fs-xl: 1.25rem; /* 20px */
+@value fs-2xl: 1.5rem; /* 24px */
+@value fs-3xl: 1.875rem; /* 30px */
+
+/* Font weights */
+@value fw-normal: 400;
+@value fw-medium: 500;
+@value fw-semibold: 600;
+@value fw-bold: 700;
+
+/* Line heights */
+@value lh-tight: 1.2;
+@value lh-normal: 1.5;
+@value lh-relaxed: 1.75;
+
+/* ============================================================================
+   TRANSITIONS & ANIMATIONS
+   ============================================================================ */
+@value transition-fast: 100ms ease-in-out;
+@value transition-normal: 200ms ease-in-out;
+@value transition-slow: 300ms ease-in-out;
+
+/* ============================================================================
+   Z-INDEX SCALE
+   ============================================================================ */
+@value z-dropdown: 1000;
+@value z-sticky: 100;
+@value z-fixed: 50;
+@value z-base: 1;

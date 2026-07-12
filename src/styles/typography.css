@@ -1,0 +1,63 @@
+/* ============================================================================
+   TYPOGRAPHY - Global text styles and heading hierarchy
+   ============================================================================ */
+
+/* Set base font family for body */
+body {
+  font-family: 'Momo Trust Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ============================================================================
+   HEADING STYLES - Using Mono45Headline
+   ============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Mono45Headline', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+/* ============================================================================
+   TEXT UTILITY CLASSES
+   ============================================================================ */
+
+.title-headline {
+  font-family: 'Mono45Headline', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.title-light {
+  font-family: 'Mono45Headline', sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+button {
+  font-family: inherit;
+}

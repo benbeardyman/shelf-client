@@ -1,3 +1,6 @@
+@value transition-fast from '../styles/variables.css';
+@value spacing-xs from '../styles/variables.css';
+
 .toggle {
   display: flex;
   border: 1px solid var(--border);
@@ -12,8 +15,8 @@
   color: var(--muted);
   cursor: pointer;
   font-size: 0.85rem;
-  padding: 0.35rem 0.6rem;
-  transition: all 0.15s;
+  padding: spacing-xs;
+  transition: transition-fast;
   line-height: 1;
 }
 

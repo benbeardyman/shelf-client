@@ -1,10 +1,17 @@
 @value spacing-sm from '../styles/variables.css';
 @value spacing-md from '../styles/variables.css';
+@value m-screen from '../styles/variables.css';
 
 .entryForm {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: spacing-sm;
+}
+
+@media (m-screen) {
+  .entryForm {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .entryForm input,

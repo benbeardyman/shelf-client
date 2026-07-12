@@ -83,6 +83,7 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
         {['Film', 'TV'].map((option) => (
           <div key={option} className={styles.radioOption}>
             <input
+              required
               type='radio'
               id={`type-${option}`}
               name='type'

@@ -28,7 +28,7 @@ export function FilmList({
           <div className={styles.itemMain}>
             <strong>{f.title}</strong>
             <span className={styles.itemSub}>
-              {`${f.type}`}
+              {`${f.type} `}
               {f.director ? `Dir. ${f.director}` : ''}
               {f.year ? ` (${f.year})` : ''}
             </span>

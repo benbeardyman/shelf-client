@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Book } from '../../types';
 import styles from '../item.module.css';
-import { EditBookForm } from './EditBookForm';
+import { BookForm } from './BookForm';
 
 function Stars({ n }: { n: number | null }) {
   if (!n) return null;
@@ -20,10 +20,10 @@ export function BookList({
   books: Book[];
   onChanged: () => void;
 }) {
-  if (!books.length) return <p className={styles.empty}>No books yet.</p>;
-
   const [showForm, setShowForm] = useState(false);
   const [selectedBookId, setSelectedBookId] = useState<string | null>(null);
+
+  if (!books.length) return <p className={styles.empty}>No books yet.</p>;
 
   const handleFormChange = () => {
     setShowForm(false);
@@ -63,21 +63,18 @@ export function BookList({
           </li>
         ))}
       </ul>
-
-      <main>
-        {showForm && (
-          <>
-            <div className={styles.modalBackdrop} onClick={handleFormChange} />
-            <section className={styles.modalFormSection}>
-              <EditBookForm
-                bookId={selectedBookId}
-                onAdded={handleFormChange}
-                onDeleted={handleFormChange}
-              />
-            </section>
-          </>
-        )}
-      </main>
+      {showForm && (
+        <>
+          <div className={styles.modalBackdrop} onClick={handleFormChange} />
+          <section className={styles.modalFormSection}>
+            <BookForm
+              bookId={selectedBookId}
+              onAdded={handleFormChange}
+              onDeleted={handleFormChange}
+            />
+          </section>
+        </>
+      )}
     </div>
   );
 }

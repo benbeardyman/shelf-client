@@ -1,30 +1,32 @@
 import { useState } from 'react';
-import { api } from '../api';
-import type { BookCreate } from '../types';
-import styles from './form.module.css';
+import { api } from '../../api';
+import type { FilmCreate } from '../../types';
+import styles from '../form.module.css';
 
-const empty: BookCreate = {
+const empty: FilmCreate = {
   title: '',
-  author: '',
+  director: null,
   year: null,
   genre: null,
-  date_read: null,
+  date_watched: null,
   rating: null,
+  type: '',
   notes: null,
 };
 
-export function AddBookForm({ onAdded }: { onAdded: () => void }) {
-  const [form, setForm] = useState<BookCreate>(empty);
+export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
+  const [form, setForm] = useState<FilmCreate>(empty);
   const [saving, setSaving] = useState(false);
 
-  const set = (k: keyof BookCreate, v: string) =>
+  const set = (k: keyof FilmCreate, v: string) =>
     setForm((f) => ({ ...f, [k]: v === '' ? null : v }));
 
   const submit = async (e: React.FormEvent) => {
+    console.log('form', form);
     e.preventDefault();
     setSaving(true);
     try {
-      await api.books.create({
+      await api.films.create({
         ...form,
         year: form.year ? Number(form.year) : null,
         rating: form.rating ? Number(form.rating) : null,
@@ -45,10 +47,9 @@ export function AddBookForm({ onAdded }: { onAdded: () => void }) {
         onChange={(e) => set('title', e.target.value)}
       />
       <input
-        required
-        placeholder='Author'
-        value={form.author ?? ''}
-        onChange={(e) => set('author', e.target.value)}
+        placeholder='Director'
+        value={form.director ?? ''}
+        onChange={(e) => set('director', e.target.value)}
       />
       <input
         type='number'
@@ -63,9 +64,9 @@ export function AddBookForm({ onAdded }: { onAdded: () => void }) {
       />
       <input
         type='date'
-        title='Date read'
-        value={form.date_read ?? ''}
-        onChange={(e) => set('date_read', e.target.value)}
+        title='Date watched'
+        value={form.date_watched ?? ''}
+        onChange={(e) => set('date_watched', e.target.value)}
       />
       <select
         value={form.rating ?? ''}
@@ -78,13 +79,29 @@ export function AddBookForm({ onAdded }: { onAdded: () => void }) {
           </option>
         ))}
       </select>
+      <div className={styles.radioGroup}>
+        {['Film', 'TV'].map((option) => (
+          <div key={option} className={styles.radioOption}>
+            <input
+              required
+              type='radio'
+              id={`type-${option}`}
+              name='type'
+              value={option}
+              checked={form.type === option}
+              onChange={(e) => set('type', e.target.value)}
+            />
+            <label htmlFor={`type-${option}`}>{option}</label>
+          </div>
+        ))}
+      </div>
       <textarea
         placeholder='Notes'
         value={form.notes ?? ''}
         onChange={(e) => set('notes', e.target.value)}
       />
       <button type='submit' disabled={saving}>
-        {saving ? 'Saving…' : 'Add Book'}
+        {saving ? 'Saving…' : 'Add Film'}
       </button>
     </form>
   );

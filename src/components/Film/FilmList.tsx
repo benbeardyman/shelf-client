@@ -1,6 +1,6 @@
-import type { Film } from '../types';
-import { api } from '../api';
-import styles from './item.module.css';
+import type { Film } from '../../types';
+import { api } from '../../api';
+import styles from '../item.module.css';
 
 function Stars({ n }: { n: number | null }) {
   if (!n) return null;

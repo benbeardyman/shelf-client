@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { api } from '../../api';
 import type { FilmCreate } from '../../types';
 import styles from '../form.module.css';
@@ -14,23 +14,63 @@ const empty: FilmCreate = {
   notes: null,
 };
 
-export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
+export function FilmForm({
+  filmId = null,
+  onAdded,
+  onDeleted,
+}: {
+  filmId?: string | null;
+  onAdded: () => void;
+  onDeleted?: () => void;
+}) {
   const [form, setForm] = useState<FilmCreate>(empty);
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (!filmId) {
+      setForm(empty);
+      return;
+    }
+
+    const loadFilm = async () => {
+      const films = await api.films.list();
+      const film = films.find((f) => f.id === Number(filmId));
+      if (film) {
+        setForm({
+          title: film.title,
+          director: film.director,
+          year: film.year,
+          genre: film.genre,
+          date_watched: film.date_watched,
+          rating: film.rating,
+          type: film.type,
+          notes: film.notes,
+        });
+      }
+    };
+
+    loadFilm();
+  }, [filmId]);
 
   const set = (k: keyof FilmCreate, v: string) =>
     setForm((f) => ({ ...f, [k]: v === '' ? null : v }));
 
   const submit = async (e: React.FormEvent) => {
-    console.log('form', form);
     e.preventDefault();
     setSaving(true);
     try {
-      await api.films.create({
+      const data = {
         ...form,
         year: form.year ? Number(form.year) : null,
         rating: form.rating ? Number(form.rating) : null,
-      });
+      };
+
+      if (filmId) {
+        await api.films.update(Number(filmId), data);
+      } else {
+        await api.films.create(data);
+      }
+
       setForm(empty);
       onAdded();
     } finally {
@@ -101,8 +141,20 @@ export function AddFilmForm({ onAdded }: { onAdded: () => void }) {
         onChange={(e) => set('notes', e.target.value)}
       />
       <button type='submit' disabled={saving}>
-        {saving ? 'Saving…' : 'Add Film'}
+        {saving ? 'Saving…' : filmId ? 'Update Film' : 'Add Film'}
       </button>
+      {filmId && (
+        <button
+          className={styles.deleteBtn}
+          onClick={async () => {
+            await api.films.remove(Number(filmId));
+            onDeleted?.();
+          }}
+          aria-label='Delete'
+        >
+          Delete Film
+        </button>
+      )}
     </form>
   );
 }

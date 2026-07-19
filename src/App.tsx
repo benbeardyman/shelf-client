@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { api } from './api';
 import type { Book, Film } from './types';
-import { AddBookForm } from './components/Book/AddBookForm';
-import { AddFilmForm } from './components/Film/AddFilmForm';
+import { BookForm } from './components/Book/BookForm';
+import { FilmForm } from './components/Film/FilmForm';
 import { BookList } from './components/Book/BookList';
 import { FilmList } from './components/Film/FilmList';
 import { ThemeToggle } from './components/ThemeToggle';
@@ -68,9 +68,9 @@ export default function App() {
         {showForm && (
           <section className={styles.formSection}>
             {tab === 'books' ? (
-              <AddBookForm onAdded={handleAdded} />
+              <BookForm onAdded={handleAdded} />
             ) : (
-              <AddFilmForm onAdded={handleAdded} />
+              <FilmForm onAdded={handleAdded} />
             )}
           </section>
         )}

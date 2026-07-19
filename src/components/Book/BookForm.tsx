@@ -128,7 +128,6 @@ export function BookForm({
       </button>
       {bookId && (
         <button
-          className={styles.deleteBtn}
           onClick={async () => {
             await api.books.remove(Number(bookId));
             onDeleted?.();

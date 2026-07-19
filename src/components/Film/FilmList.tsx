@@ -54,7 +54,7 @@ export function FilmList({
             </div>
             {f.notes && <p className={styles.notes}>{f.notes}</p>}
             <button
-              className={styles.deleteBtn}
+              className={styles.editBtn}
               onClick={() => {
                 setSelectedFilmId(String(f.id));
                 setShowForm((v) => !v);

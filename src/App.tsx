@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { api } from './api';
 import type { Book, Film } from './types';
-import { AddBookForm } from './components/AddBookForm';
-import { AddFilmForm } from './components/AddFilmForm';
-import { BookList } from './components/BookList';
-import { FilmList } from './components/FilmList';
+import { AddBookForm } from './components/Book/AddBookForm';
+import { AddFilmForm } from './components/Film/AddFilmForm';
+import { BookList } from './components/Book/BookList';
+import { FilmList } from './components/Film/FilmList';
 import { ThemeToggle } from './components/ThemeToggle';
 import { useTheme } from './hooks/useTheme';
 import styles from './App.module.css';

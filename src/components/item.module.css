@@ -75,7 +75,7 @@
   right: 0.75rem;
   background: none;
   border: none;
-  color: var(--color-border);
+  color: var(--color-text-secondary);
   cursor: pointer;
   font-size: 0.8rem;
   transition: transition-fast;
@@ -88,4 +88,24 @@
   color: var(--color-text-muted);
   font-style: italic;
   padding: 1rem 0;
+}
+
+.modalFormSection {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: min(90vw, 480px);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.4);
 }

@@ -69,7 +69,7 @@
   font-style: italic;
 }
 
-.deleteBtn {
+.editBtn {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
@@ -80,7 +80,7 @@
   font-size: 0.8rem;
   transition: transition-fast;
 }
-.deleteBtn:hover {
+.editBtn:hover {
   color: #e06060;
 }
 

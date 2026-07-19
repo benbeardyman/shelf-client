@@ -145,7 +145,6 @@ export function FilmForm({
       </button>
       {filmId && (
         <button
-          className={styles.deleteBtn}
           onClick={async () => {
             await api.films.remove(Number(filmId));
             onDeleted?.();

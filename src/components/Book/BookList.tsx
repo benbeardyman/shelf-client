@@ -52,7 +52,7 @@ export function BookList({
             </div>
             {b.notes && <p className={styles.notes}>{b.notes}</p>}
             <button
-              className={styles.deleteBtn}
+              className={styles.editBtn}
               onClick={() => {
                 setSelectedBookId(String(b.id));
                 setShowForm((v) => !v);

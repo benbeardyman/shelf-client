@@ -13,14 +13,14 @@ const empty: BookCreate = {
   notes: null,
 };
 
-export function EditBookForm({
-  bookId,
+export function BookForm({
+  bookId = null,
   onAdded,
   onDeleted,
 }: {
-  bookId: string | null;
+  bookId?: string | null;
   onAdded: () => void;
-  onDeleted: () => void;
+  onDeleted?: () => void;
 }) {
   const [form, setForm] = useState<BookCreate>(empty);
   const [saving, setSaving] = useState(false);
@@ -126,16 +126,18 @@ export function EditBookForm({
       <button type='submit' disabled={saving}>
         {saving ? 'Saving…' : bookId ? 'Update Book' : 'Add Book'}
       </button>
-      <button
-        className={styles.deleteBtn}
-        onClick={async () => {
-          await api.books.remove(Number(bookId));
-          onDeleted();
-        }}
-        aria-label='Delete'
-      >
-        Delete Book
-      </button>
+      {bookId && (
+        <button
+          className={styles.deleteBtn}
+          onClick={async () => {
+            await api.books.remove(Number(bookId));
+            onDeleted?.();
+          }}
+          aria-label='Delete'
+        >
+          Delete Book
+        </button>
+      )}
     </form>
   );
 }

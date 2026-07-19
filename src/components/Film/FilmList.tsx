@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { Film } from '../../types';
-import { api } from '../../api';
 import styles from '../item.module.css';
 import { FilmForm } from './FilmForm';
 
